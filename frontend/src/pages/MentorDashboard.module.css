@@ -1,0 +1,254 @@
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+  min-height: calc(100vh - 80px);
+  background: #f8fafc;
+  padding: 20px 30px;
+}
+
+/* ================= TABS + SEARCH ROW ================= */
+
+.tabsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+}
+
+/* ================= TAB BUTTON ================= */
+
+.tabButton {
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #e5e7eb;
+  color: #374151;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.tabButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.activePending {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.activeCompleted {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+/* ================= SEARCH BOX ================= */
+
+.searchBox {
+  display: flex;
+  align-items: center;
+}
+
+.searchBox input {
+  height: 42px;                 /* Same as tab */
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  min-width: 260px;
+  transition: 0.2s ease;
+  background: white;
+}
+
+.searchBox input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.2);
+}
+
+/* ================= NOTE CARD ================= */
+
+.noteCard {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.noteCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= NOTE HEADER ================= */
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.noteTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ================= STATUS BADGES ================= */
+
+.statusPending {
+  background: #fef3c7;
+  color: #b45309;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.statusCompleted {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ================= UPLOADER INFO ================= */
+
+.uploader {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* ================= CONTENT BLOCK ================= */
+
+.contentBlock {
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* ================= CONTENT TEXT ================= */
+
+.contentText {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/* ================= TEXTAREA ================= */
+
+.textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: none;
+  overflow: hidden;
+  min-height: 42px;
+  max-height: 160px;
+  transition: 0.2s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+/* ================= REPLY SECTION ================= */
+
+.replySection {
+  margin-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.replyButton {
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.replyButton:hover {
+  background-color: #574fd6;
+}
+
+.replyButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ================= ASSESSMENT BOX ================= */
+
+.assessmentBox {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.assessmentBox strong {
+  color: #1f2937;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.emptyState {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .tabsContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs {
+    justify-content: space-between;
+  }
+
+  .searchBox input {
+    width: 100%;
+  }
+
+  .noteHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .noteTitle {
+    font-size: 18px;
+  }
+}

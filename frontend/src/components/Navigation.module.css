@@ -1,0 +1,219 @@
+/* ================= NAVIGATION LAYOUT ================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 70px;
+  background: linear-gradient(90deg, #5f5ce6, #6c63ff);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative; /* for mobile dropdown */
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 Logo Section */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoImg {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 Nav Links Desktop */
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.listItem svg {
+  font-size: 20px;
+}
+
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 🔥 Search Box */
+.searchBox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.searchBox input {
+  width: 380px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.searchBox input:focus {
+  width: 450px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* ================= MOBILE SPECIFIC ================= */
+.menuIconMobile {
+  display: none; /* default hidden */
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mobile dropdown menu */
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px; /* just below nav */
+  right: 20px;
+  background: #5f5ce6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 140px;
+  z-index: 100;
+  animation: slideDown 0.3s ease forwards;
+}
+
+.mobileDropdown a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.mobileDropdown a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile slide down animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .searchBox input {
+    width: 250px;
+  }
+
+  .logoImg {
+    width: 65px;
+    height: 65px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .listItem {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: row; /* keep logo + menu in one row */
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  .logoImg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .navList {
+    display: none; /* hide desktop links */
+  }
+
+  .menuIconMobile {
+    display: block; /* show hamburger on mobile */
+  }
+
+  .searchBox {
+    display: none; /* hide search on mobile if desired */
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  .logoImg {
+    width: 45px;
+    height: 45px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .mobileDropdown {
+    right: 10px;
+    min-width: 120px;
+  }
+
+  .mobileDropdown a {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,300 @@
+/* ===========================
+   GLOBAL CONTAINER
+=========================== */
+
+.container {
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  font-family: "Inter", sans-serif;
+}
+
+/* ===========================
+   PAGE TITLE
+=========================== */
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1e293b;
+}
+
+/* ===========================
+   TABLE (ADMIN NOTES)
+=========================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.table th {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+}
+
+.table tr {
+  transition: all 0.2s ease;
+}
+
+.table tr:hover {
+  background: #f8fafc;
+  transform: scale(1.01);
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.viewBtn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 6px;
+  transition: all 0.2s ease;
+}
+
+.viewBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.deleteBtn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* ===========================
+   NOTE DETAILS PAGE
+=========================== */
+
+.noteContainer {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* NOTE HEADER */
+
+.noteHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.noteTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.noteInfo {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* DELETE NOTE BUTTON */
+
+.deleteNoteBtn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.deleteNoteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* ===========================
+   TABS
+=========================== */
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.tabBtn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.tabBtn:hover {
+  background: #e2e8f0;
+}
+
+.tabActivePending {
+  background: #3b82f6;
+  color: white;
+}
+
+.tabActiveCompleted {
+  background: #10b981;
+  color: white;
+}
+
+/* ===========================
+   CONTENT CARDS
+=========================== */
+
+.contentsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.contentCard {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  transition: 0.25s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contentCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contentText {
+  margin-bottom: 10px;
+  color: #334155;
+}
+
+.fileLink {
+  display: inline-block;
+  margin-top: 5px;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.fileLink:hover {
+  text-decoration: underline;
+}
+
+.mentorName {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.contentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuIcon {
+  cursor: pointer;
+  color: #64748b;
+}
+
+.menuIcon:hover {
+  color: #111827;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .noteContainer {
+    padding: 20px;
+  }
+
+  .noteHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .contentsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* MOBILE TABLE */
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: block;
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border: none;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+  }
+}

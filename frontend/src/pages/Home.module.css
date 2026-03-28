@@ -1,0 +1,201 @@
+/* ===== Layout ===== */
+
+.container {
+  display: flex;
+  height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+
+.left {
+  width: 25%;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.right {
+  width: 75%;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* ===== Content Card ===== */
+
+.contentCard {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid transparent;
+}
+
+.contentCard:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Status Colors ===== */
+
+.pendingCard {
+  border-left: 5px solid #f59e0b;
+  background: #fffaf0;
+}
+
+.completedCard {
+  border-left: 5px solid #10b981;
+  background: #f0fdf4;
+}
+
+/* ===== Header ===== */
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.contentHeader h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  flex: 1;
+}
+
+/* ===== Status Badge ===== */
+
+.statusPending {
+  background: #fbbf24;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusCompleted {
+  background: #10b981;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===== Menu Icon ===== */
+
+.menuIcon {
+  cursor: pointer;
+  color: #6b7280;
+  transition: 0.2s;
+}
+
+.menuIcon:hover {
+  color: #111827;
+}
+
+/* ===== Header Section ===== */
+
+.rightHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.sortIconBtn {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sortIconBtn:hover {
+  background: #eef2ff;
+}
+
+/* ===== Empty State ===== */
+
+.emptyState {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* ===== Scrollbar Styling ===== */
+
+.right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 1024px) {
+  .left {
+    width: 35%;
+  }
+
+  .right {
+    width: 65%;
+    padding: 20px;
+  }
+}
+
+/* ===== Mobile (phones only) ===== */
+@media (max-width: 768px) {
+  html,
+  body {
+    height: auto;       /* allow page to grow */
+    overflow-y: auto;   /* enable scrolling */
+  }
+
+  .container {
+    display: block;     /* remove flex for mobile so it flows naturally */
+    height: auto !important; /* override any previous height */
+  }
+
+  .left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px;
+    display: block; /* stack naturally */
+    gap: 10px;
+    background: #fff;
+  }
+
+  .right {
+    width: 100%;
+    padding: 15px 10px;
+    display: block;
+  }
+}
+
+/* ===== Small Mobile (≤480px) ===== */
+@media (max-width: 480px) {
+  .contentCard {
+    padding: 12px;
+  }
+
+  .contentHeader h4 {
+    font-size: 13px;
+  }
+
+  .statusPending,
+  .statusCompleted {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}

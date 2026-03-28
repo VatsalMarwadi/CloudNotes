@@ -1,0 +1,230 @@
+/* ================= MAIN CONTAINER ================= */
+.container {
+  padding: 40px 60px;
+  background: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================= TITLE ================= */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e293b;
+  text-align: center;
+}
+
+/* ================= MENTOR BOX ================= */
+.mentorBox {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  padding: 20px 25px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.15);
+  transition: all 0.3s ease;
+}
+
+.mentorBox:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+}
+
+.mentorInfo {
+  font-size: 15px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* ================= STATUS BADGE ================= */
+.status {
+  padding: 6px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  text-align: center;
+}
+
+/* Different status colors */
+.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.pending {
+  background: #fef9c3;
+  color: #b45309;
+}
+
+.inProgress {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* ================= FILE CARD ================= */
+.fileCard {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.fileCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= FILE ROW ================= */
+.fileRow {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #334155;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.fileRow span {
+  font-weight: 600;
+  color: #0f172a;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.fileRowContent {
+  flex: 1;
+  word-break: break-word;
+  white-space: pre-wrap; /* preserve line breaks */
+  overflow-wrap: anywhere;
+  color: #475569;
+  font-size: 15px;
+}
+
+/* ================= REPLY BOX ================= */
+.replyBox {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 14px;
+  border-left: 6px solid #6366f1;
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.1);
+  transition: all 0.3s ease;
+  word-break: break-word;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.replyTitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+/* ================= SCROLLBAR STYLING ================= */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .container {
+    padding: 30px 40px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .mentorBox {
+    padding: 18px 20px;
+  }
+
+  .fileCard {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .mentorBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .status {
+    min-width: auto;
+    padding: 6px 12px;
+  }
+
+  .fileCard {
+    padding: 18px;
+  }
+
+  .fileRow span {
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .mentorBox {
+    padding: 15px;
+  }
+
+  .fileCard {
+    padding: 15px;
+  }
+
+  .fileRow span {
+    min-width: 80px;
+    font-size: 14px;
+  }
+
+  .fileRowContent {
+    font-size: 14px;
+  }
+
+  .replyTitle {
+    font-size: 15px;
+  }
+}

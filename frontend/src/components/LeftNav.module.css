@@ -1,0 +1,187 @@
+/* ===== Container ===== */
+.container {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* ===== Search & Sort ===== */
+.searchSortRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+}
+
+/* ===== Note Item ===== */
+.noteItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.noteItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background: #eef2ff;
+}
+
+.activeNote {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+.noteItem span {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ===== Menu Icon ===== */
+.menuIcon {
+  font-size: 20px !important;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s ease;
+}
+
+.menuIcon:hover {
+  opacity: 1;
+  color: #6366f1;
+}
+
+/* ===== Create Button ===== */
+.createBtn {
+  width: 100%;
+  padding: 12px;
+  margin-top: auto;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.createBtn:hover {
+  background: #059669;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+/* ===== Sort Button (optional if using button instead of icon) ===== */
+.sortBtn {
+  width: 100%;
+  padding: 8px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.sortBtn:hover {
+  background: #4f46e5;
+}
+
+/* ===== Responsive: Tablet ===== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .noteItem {
+    padding: 10px 12px;
+  }
+
+  .searchInput {
+    font-size: 13px;
+  }
+
+  .createBtn {
+    padding: 10px;
+  }
+}
+
+/* ===== Responsive: Mobile ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto; /* scrollable notes list if many */
+  }
+
+  .searchSortRow {
+    display: flex;
+    flex-direction: row; /* keep input and button in same line */
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .searchInput {
+    flex: 1; /* take available space */
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .noteItem {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .createBtn {
+    padding: 10px;
+    margin-top: 15px;
+  }
+}
+
+/* ===== Small Mobile (≤480px) ===== */
+@media (max-width: 480px) {
+  .noteItem {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .searchInput {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .createBtn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
